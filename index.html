@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GourmetGuide | AI Food Assistant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nex-Gen Food Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* General Styles */
         * {
             margin: 0;
             padding: 0;
@@ -15,166 +14,106 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fdfdfd;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.4;
         }
 
         /* Navigation */
         header {
-            padding: 1.5rem 10%;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2d5a27; /* Forest Green */
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
         }
 
         .logo span {
-            color: #ff6b6b; /* Coral */
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 400;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
             color: #ff6b6b;
         }
 
-        /* Hero Section */
+        /* Main Hero Section */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 5rem 10%;
-            min-height: 80vh;
-            gap: 4rem;
+            padding: 2rem 8% 6rem 8%;
+            gap: 5%;
         }
 
-        .hero-content {
+        .hero-text {
             flex: 1;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
             color: #222;
-        }
-
-        .hero-content h1 span {
-            color: #2d5a27;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: #666;
             margin-bottom: 2rem;
-            max-width: 500px;
+            line-height: 1;
         }
 
-        .hero-image {
-            flex: 1;
-            position: relative;
+        .hero-text h1 .highlight {
+            color: #2d5a27;
+            display: block;
         }
 
-        .hero-image img {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 30px 30px 0px #f0f7ef;
-            object-fit: cover;
-        }
-
-        /* Buttons */
-        .btn-primary {
-            padding: 1rem 2.5rem;
+        .btn-cta {
+            display: inline-block;
+            padding: 1.2rem 2.8rem;
             background-color: #ff6b6b;
             color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.25);
+            transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background-color: #fa5252;
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.35);
         }
 
-        /* Features Section */
-        .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 4rem 10%;
-            background-color: #f9f9f9;
+        /* Imagery */
+        .hero-visual {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
-        .feature-card {
-            background: white;
-            padding: 2.5rem;
+        .hero-visual img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
             border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            width: 320px;
-            transition: 0.3s;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .img-large {
+            grid-row: span 2;
+            height: 615px !important;
         }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: #2d5a27;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 3rem;
             }
-            .hero-content p {
-                margin: 0 auto 2rem auto;
+            .hero-text h1 {
+                font-size: 3rem;
             }
-            .hero-image img {
-                box-shadow: 15px 15px 0px #f0f7ef;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav ul {
-                display: none;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .hero-visual {
+                margin-top: 3rem;
             }
         }
     </style>
@@ -182,42 +121,22 @@
 <body>
 
     <header>
-        <div class="logo">Gourmet<span>Guide</span></div>
-        <nav>
-            <ul>
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">Pantry</a></li>
-                <li><a href="#">Meal Plan</a></li>
-            </ul>
-        </nav>
+        <div class="logo">Nex-Gen <span>Food</span></div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Your Personal <br><span>AI Sous Chef</span></h1>
-            <p>Stuck on what to cook? Just tell our assistant what's in your fridge, and we'll handle the rest. Healthy, delicious, and fast.</p>
-            <button class="btn-primary">Start Cooking</button>
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Your Personal <span class="highlight">AI Sous Chef</span></h1>
+            <a href="#" class="btn-cta">Start Cooking</a>
         </div>
-        <div class="hero-image">
-            <!-- High quality free image from Unsplash -->
-            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Healthy Meal Prep">
-        </div>
-    </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>Instant Recipes</h3>
-            <p>Get step-by-step instructions for thousands of dishes tailored to your skill level.</p>
+        <div class="hero-visual">
+            <!-- Free images from Unsplash -->
+            <img class="img-large" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80" alt="Cooking process">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" alt="Plated dish">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Salad">
         </div>
-        <div class="feature-card">
-            <h3>Nutrition Tracking</h3>
-            <p>Ask about calories, macros, or allergens for any ingredient instantly.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Smart Shopping</h3>
-            <p>Let the AI generate a organized grocery list based on your weekly meal plan.</p>
-        </div>
-    </section>
+    </main>
 
     <!-- Watson Assistant Chat Integration -->
     <script>
